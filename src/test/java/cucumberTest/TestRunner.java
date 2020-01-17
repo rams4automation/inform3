@@ -15,17 +15,6 @@ import cucumber.api.testng.TestNGCucumberRunner;
 @CucumberOptions(features ="Features", glue={"stepDefinition"},plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html",
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json", "junit:target/cucumber-results.xml" })
-		
-		
-       /* features = "Features",
-        glue = {"stepDefinition"},
-       // tags = {"~@Ignore"},
-        format = {
-                "pretty",
-                "html:target/cucumber-reports/cucumber-pretty",
-                "json:target/cucumber-reports/CucumberTestReport.json",
-                "rerun:target/cucumber-reports/rerun.txt"
-        },plugin = "json:target/cucumber-reports/CucumberTestReport.json")*/
 
 public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
@@ -49,4 +38,5 @@ public class TestRunner {
     public void tearDownClass() throws Exception {
         testNGCucumberRunner.finish();
     }
+    
 }

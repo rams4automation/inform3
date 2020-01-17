@@ -112,7 +112,7 @@ public class SignInStep {
 			@Then("^Verify user is able to login to the application from Business page$")
 			public void verifyBusinessHomePage() throws Throwable {
 				Thread.sleep(2000);
-				 driver.close();
+				driver.close();
 			    Thread.sleep(5000);
 			   
 			   	 }
