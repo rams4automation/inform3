@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="95733" started-at="2020-01-17T13:41:59Z" finished-at="2020-01-17T13:43:35Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucumberTest.TestRunner@369f73a2]" name="feature" class="cucumberTest.TestRunner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Default test" duration-ms="95733" started-at="2020-01-17T13:41:59Z" finished-at="2020-01-17T13:43:35Z">
+      <class name="cucumberTest.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:cucumberTest.TestRunner@369f73a2]" name="setUpClass" is-config="true" duration-ms="200" started-at="2020-01-17T13:41:59Z" finished-at="2020-01-17T13:42:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucumberTest.TestRunner@369f73a2]" name="feature" duration-ms="48622" started-at="2020-01-17T13:42:00Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-01-17T13:42:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Synovus Business Sign in]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucumberTest.TestRunner@369f73a2]" name="feature" duration-ms="46034" started-at="2020-01-17T13:42:48Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-01-17T13:43:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Synovus Sign in]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:cucumberTest.TestRunner@369f73a2]" name="tearDownClass" is-config="true" duration-ms="796" started-at="2020-01-17T13:43:34Z" finished-at="2020-01-17T13:43:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- cucumberTest.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
