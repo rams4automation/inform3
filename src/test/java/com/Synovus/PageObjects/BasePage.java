@@ -2,7 +2,9 @@ package com.Synovus.PageObjects;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -30,11 +32,19 @@ public class BasePage {
 		 Thread.sleep(2000);
 		//driver.get("https://www.facebook.com/");
 		driver.get(URL);
-		
-	
 	}
 	
+	public void clickmethod(WebDriver driver,By element){
+		driver.findElement(element).click();
+	}
+	
+	public void Sendkeysmethod(WebDriver driver,By Element,String text){
+		driver.findElement(Element).clear();
+		driver.findElement(Element).sendKeys(text);
+	}
+
+
 	
 	
-	
+
 }

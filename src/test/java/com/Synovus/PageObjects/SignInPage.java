@@ -6,10 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class SignInPage {
+public class SignInPage  extends BasePage{
 	
 	WebDriver driver;
 
+	
 	
 	 @FindBy(id="LoginDeskTopModePage-Login")
 	 WebElement LoginButton;
@@ -38,9 +39,16 @@ public class SignInPage {
 	 
 	
 	public SignInPage(WebDriver driver) {
-		this.driver=driver;
+	    super(driver);
 		PageFactory.initElements(driver, this);
 	 }
+	
+	
+	
+	
+	
+	////******************************* Methods ******************************************
+	
 	
 	public void clickonPersonalSignInbutton() {
 		  PersonalMenu.click();
@@ -53,6 +61,7 @@ public class SignInPage {
 	
 	public void clickonloginlink(){
 		Loginlink.click();
+		
 	   }
 	
 	public void clickonBusinessMenu(){
@@ -60,15 +69,19 @@ public class SignInPage {
 	    }
 	
 	
-	public void EnterBusinessUserNameandPasswd(String Username,String Password){
-		user_name.sendKeys(Username);
-		Pass_WRD.sendKeys(Password);
-	    }
 	
 	public void EnterPersonalUserNameandPasswd(String Username,String Password){
 		user_name.sendKeys(Username);
 		Pass_WRD.sendKeys(Password);
 	   }
+	
+	public void EnterBusinessUserNameandPasswd(String Username,String Password){
+		user_name.sendKeys(Username);
+		Pass_WRD.sendKeys(Password);
+	   }
+	
+	
+	
 	
 	
 	

@@ -18,6 +18,8 @@ import cucumber.api.java.en.When;
 
 public class SignInStep {
 	 WebDriver driver;
+	 SignInPage SPage;
+	 
 	  
 	   ActionDriver ac=new ActionDriver();
 	   Logger logger = Logger.getLogger(SignInStep.class.getName());
@@ -59,7 +61,7 @@ public class SignInStep {
 		 
 			@Given("^Click on Personal option in primary menu$")
 			public void clickOnPersonalMenu() throws Throwable {
-				SignInPage SPage = new SignInPage(driver);
+				SPage = new SignInPage(driver);
 				Thread.sleep(2000);
 				SPage.clickonPersonalSignInbutton();
 			    Thread.sleep(5000);
@@ -69,7 +71,7 @@ public class SignInStep {
 		
 			@Given("^Click on Login link at top right of the screen$")
 			public void clickonLoginlink() throws Throwable {
-				SignInPage SPage = new SignInPage(driver);
+				SPage = new SignInPage(driver);
 				Thread.sleep(2000);
 				SPage.clickonloginlink();
 			    Thread.sleep(2000);
@@ -77,9 +79,9 @@ public class SignInStep {
 		
 			@When("^Enter Valid UserName and Password$")
 			public void EnterUserNameandPassword() throws Throwable  {
-				SignInPage SPage = new SignInPage(driver);
+				SPage = new SignInPage(driver);
 				Thread.sleep(2000);
-				SPage.EnterPersonalUserNameandPasswd(UserName,Passwrd);
+			    SPage.EnterPersonalUserNameandPasswd(UserName,Passwrd);
 			    Thread.sleep(2000);
 		        }
 		
@@ -94,15 +96,15 @@ public class SignInStep {
 			@Given("^Click on Buiness option in primary menu$")
 			public void clickOnBusinessMenu() throws Throwable {
 				Thread.sleep(2000);
-				SignInPage  SPage=new SignInPage(driver);
-				SPage.clickonBusinessMenu();
+				SPage=new SignInPage(driver);
+				SPage.clickonBusinessSignInbutton();
 			    Thread.sleep(5000);
 			      }
 		
 		
 			@When("^Enter Valid Business UserName and Password$")
 			public void EnterBusinessUserNameandPassword() throws InterruptedException  {
-				SignInPage  SPage=new SignInPage(driver);
+				SPage=new SignInPage(driver);
 				Thread.sleep(2000);
 				SPage.EnterBusinessUserNameandPasswd(BUserName,BPasswrd);
 			    Thread.sleep(2000);
@@ -117,4 +119,6 @@ public class SignInStep {
 			   
 			   	 }
 	
+			
+			
 }

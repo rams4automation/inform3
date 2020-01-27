@@ -2,6 +2,7 @@
 
 Feature: Synovus Sign in
 
+@Regression
   Scenario: Verify user is able to login to the applicatuion from Personalpage --1	
   											
      Given Launch Synovus Browser
