@@ -4,7 +4,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,7 +22,7 @@ public class BasePage {
 	 }
 	
 	
-	public void Openurl(String URL) throws InterruptedException{
+	public WebDriver Openurl(WebDriver driver,String URL) throws InterruptedException{
 		System.setProperty("webdriver.chrome.driver",path);
 		driver = new ChromeDriver(); 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -32,6 +31,7 @@ public class BasePage {
 		 Thread.sleep(2000);
 		//driver.get("https://www.facebook.com/");
 		driver.get(URL);
+		return driver;
 	}
 	
 	public void clickmethod(WebDriver driver,By element){

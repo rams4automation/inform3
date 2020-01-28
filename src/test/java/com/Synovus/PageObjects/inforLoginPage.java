@@ -22,8 +22,16 @@ public class inforLoginPage {
 			 
 			 @FindBy(xpath="//*[@id='mhdrSite']")
 			 WebElement HomePage;
+			 
+			 @FindBy(id="mhdrAppBtn")
+			 WebElement AppMenu;
 			
-	 
+			 @FindBy(xpath=".//*[@id='icdeskSClk']")
+			 WebElement inform3;
+			
+			@FindBy(xpath="//*[contains(@id, 'icdeskSClk')]//*[contains(@title, 'Infor M3')]")
+			WebElement inform3ap;
+			
 	 
 
 		 public inforLoginPage(WebDriver driver) {
@@ -31,22 +39,10 @@ public class inforLoginPage {
 				PageFactory.initElements(driver, this);
 			 }
 			
-		 public void clickonSignIn() throws InterruptedException{
-			 Thread.sleep(2000);
-			 SignOnBtn.click();
-			 Thread.sleep(5000);
-		   }
-		 
-		 public void Verifytitle(){
-			 String Expectedtitle="Homepages";
-			 String actaulTitle=driver.getTitle();
-			 System.out.println(actaulTitle);
-			 if(actaulTitle.equalsIgnoreCase(Expectedtitle))
-				 System.out.println("Verify Home Page : Title Matched");
-			 else
-				 System.out.println("Verify Home Page : Title did not Matched");
-			 }
 	
+		 
+		 // ######################## Methods ###################################
+		 
 	 
 	     public void EnterUserNameandPasswd(String Username,String Password) throws InterruptedException{
 	    	     Thread.sleep(2000);
@@ -56,10 +52,37 @@ public class inforLoginPage {
 				 Thread.sleep(2000);
 		     }
 	 
+	     public void clickonSignIn() throws InterruptedException{
+			 Thread.sleep(2000);
+			 SignOnBtn.click();
+			 Thread.sleep(5000);
+		   }
+		 
+		 public void Verifytitle() throws InterruptedException{
+			 Thread.sleep(5000);
+			 String Expectedtitle="Homepages";
+			 String actaulTitle=driver.getTitle();
+			 Thread.sleep(5000);
+			 System.out.println(actaulTitle);
+			 if(actaulTitle.equalsIgnoreCase(Expectedtitle))
+				 System.out.println("Verify Home Page : Title Matched");
+			 else
+				 System.out.println("Verify Home Page : Title did not Matched");
+			 }
 	 
 	 
+		  public void clickonAppMenu() throws InterruptedException{
+				 Thread.sleep(2000);
+				 AppMenu.click();
+				 Thread.sleep(5000);
+			   }
+	 
+		  public void clickoninform3() throws InterruptedException{
+				 Thread.sleep(2000);
+				 inform3.click();
+				 Thread.sleep(5000);
+			   }
 	 
 	 
-	 
-	 
+		  
 }

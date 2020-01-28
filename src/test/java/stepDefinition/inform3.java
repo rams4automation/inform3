@@ -4,11 +4,12 @@ import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.Synovus.PageObjects.BasePage;
+import com.Synovus.PageObjects.SalesManagementPage;
 import com.Synovus.PageObjects.inforLoginPage;
 import com.Synovus.accelerators.ActionDriver;
 import com.Synovus.fileutils.ConfigReader;
@@ -22,6 +23,8 @@ import cucumber.api.java.en.When;
 public class inform3 {
         WebDriver driver;
         inforLoginPage inforPage;
+        BasePage BPage;
+        SalesManagementPage SMPage;
 	
 
  	   ActionDriver ac=new ActionDriver();
@@ -61,12 +64,19 @@ public class inform3 {
 		@When("^Verify user is able to login to the application$")
 		public void VerifyHomePage() throws Throwable {
 			inforPage = new inforLoginPage(driver);
-		    inforPage.Verifytitle();
+		    //inforPage.Verifytitle();
+		   // inforPage.clickonAppMenu();
+		    Thread.sleep(5000);
 		}
 		
 		@Then("^Enter order details$")
 		public void enter_order_details() throws Throwable {
-		    // Write code here that turns the phrase above into concrete actions
+			//inforPage = new inforLoginPage(driver);
+			SMPage = new SalesManagementPage(driver);
+			SMPage.clickSalesManagement();
+			SMPage.clickOnCOPPage();
+			SMPage.clickOnCustomerOrderOpen();
+			//inforPage.clickoninform3();
 		}
 
 }
