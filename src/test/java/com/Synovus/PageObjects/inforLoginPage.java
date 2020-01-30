@@ -26,7 +26,7 @@ public class inforLoginPage {
 			 @FindBy(id="mhdrAppBtn")
 			 WebElement AppMenu;
 			
-			 @FindBy(xpath=".//*[@id='icdeskSClk']")
+			 @FindBy(xpath=".//*[@id='icdeskSClk' and @title='Infor M3']")
 			 WebElement inform3;
 			
 			@FindBy(xpath="//*[contains(@id, 'icdeskSClk')]//*[contains(@title, 'Infor M3')]")

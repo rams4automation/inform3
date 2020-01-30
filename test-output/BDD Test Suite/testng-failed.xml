@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="1" configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [BDD Test Suite]" parallel="tests">
+  <test name="CucumberSelenium(failed)" parallel="tests">
     <classes>
       <class name="cucumberTest.TestRunner">
         <methods>
@@ -11,5 +11,5 @@
         </methods>
       </class> <!-- cucumberTest.TestRunner -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- CucumberSelenium(failed) -->
+</suite> <!-- Failed suite [BDD Test Suite] -->

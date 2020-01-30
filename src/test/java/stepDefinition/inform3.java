@@ -1,5 +1,7 @@
 package stepDefinition;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.Synovus.PageObjects.BasePage;
+import com.Synovus.PageObjects.PlannedorderDistibutionPage;
 import com.Synovus.PageObjects.SalesManagementPage;
 import com.Synovus.PageObjects.inforLoginPage;
 import com.Synovus.accelerators.ActionDriver;
@@ -25,6 +28,7 @@ public class inform3 {
         inforLoginPage inforPage;
         BasePage BPage;
         SalesManagementPage SMPage;
+        PlannedorderDistibutionPage PDPage;
 	
 
  	   ActionDriver ac=new ActionDriver();
@@ -65,18 +69,56 @@ public class inform3 {
 		public void VerifyHomePage() throws Throwable {
 			inforPage = new inforLoginPage(driver);
 		    //inforPage.Verifytitle();
-		   // inforPage.clickonAppMenu();
-		    Thread.sleep(5000);
+		    inforPage.clickonAppMenu();
+		    Thread.sleep(2000);
+		    inforPage.clickoninform3();
 		}
 		
 		@Then("^Enter order details$")
 		public void enter_order_details() throws Throwable {
 			//inforPage = new inforLoginPage(driver);
-			SMPage = new SalesManagementPage(driver);
-			SMPage.clickSalesManagement();
-			SMPage.clickOnCOPPage();
-			SMPage.clickOnCustomerOrderOpen();
+//			SMPage = new SalesManagementPage(driver);
+//			SMPage.clickSalesManagement();
+//			SMPage.clickOnCOPPage();
+//			SMPage.clickOnCustomerOrderOpen();
 			//inforPage.clickoninform3();
+			 Thread.sleep(2000);
+			Robot robot = new Robot();
+			// press key Ctrl+Shift+r
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			/*robot.delay(100);
+			robot.keyPress(KeyEvent.VK_SHIFT);*/
+			robot.delay(100);
+			robot.keyPress(KeyEvent.VK_R);
+			robot.delay(100);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.delay(100);
+			robot.keyRelease(KeyEvent.VK_R);
+			robot.delay(100);
+			robot.keyPress(KeyEvent.VK_D);
+			robot.keyRelease(KeyEvent.VK_D);
+			robot.keyPress(KeyEvent.VK_P);
+			robot.keyRelease(KeyEvent.VK_P);
+			robot.keyPress(KeyEvent.VK_S);
+			robot.keyRelease(KeyEvent.VK_S);
+			robot.keyPress(KeyEvent.VK_1);
+			robot.keyRelease(KeyEvent.VK_1);
+			robot.keyPress(KeyEvent.VK_7);
+			robot.keyRelease(KeyEvent.VK_7);
+			robot.keyPress(KeyEvent.VK_0);
+			robot.keyRelease(KeyEvent.VK_0);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			// relase key Ctrl+Shift+r
+			
+			/*robot.delay(100);
+			robot.keyRelease(KeyEvent.VK_SHIFT);*/
+			/*robot.delay(100);
+			robot.keyRelease(KeyEvent.VK_CONTROL);*/
+			
+			PDPage = new PlannedorderDistibutionPage(driver);
+			//PDPage.Enteritem();
+			Thread.sleep(2000);
 		}
 
 }
