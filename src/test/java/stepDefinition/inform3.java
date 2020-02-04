@@ -118,6 +118,13 @@ public class inform3 {
 			
 			PDPage = new PlannedorderDistibutionPage(driver);
 			//PDPage.Enteritem();
+			Thread.sleep(5000);
+			PDPage.ClickonAction();
+			Thread.sleep(2000);
+			PDPage.EnterfrmwarehouseDetails();
+			PDPage.EnteritemNumber();
+			PDPage.OrderTypeNumber();
+			//PDPage.ClickonCPDO();
 			Thread.sleep(2000);
 		}
 
