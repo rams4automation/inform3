@@ -40,7 +40,7 @@ public class inform3 {
  	   ConfigReader con=new ConfigReader();
  	   
         
-  //#############################  Test Data #####################################################
+  //############################# Start Test Data #####################################################
  	   
 		String URL="https://mingle-portal.inforcloudsuite.com/GPACLLC_TRN";
 		String path=con.getChromeDriverPath();
@@ -56,7 +56,7 @@ public class inform3 {
 		String PlannedQty=TD.getCellData("TestData", "PlannedQtyval",2).trim();
 		String Pickupval=TD.getCellData("TestData", "DeliveryPickupval",2).trim();
 		
-		
+		//############################# End Test Data #####################################################	
 		
 		
 		@Given("^Launch infor Application$")
@@ -81,7 +81,6 @@ public class inform3 {
 		@When("^Verify user is able to login to the application$")
 		public void VerifyHomePage() throws Throwable {
 			inforPage = new inforLoginPage(driver);
-		    //inforPage.Verifytitle();
 		    inforPage.clickonAppMenu();
 		    Thread.sleep(2000);
 		    inforPage.clickoninform3();
@@ -89,18 +88,9 @@ public class inform3 {
 		
 		@Then("^Enter order details$")
 		public void enter_order_details() throws Throwable {
-			//inforPage = new inforLoginPage(driver);
-//			SMPage = new SalesManagementPage(driver);
-//			SMPage.clickSalesManagement();
-//			SMPage.clickOnCOPPage();
-//			SMPage.clickOnCustomerOrderOpen();
-			//inforPage.clickoninform3();
-			 Thread.sleep(2000);
+			Thread.sleep(2000);
 			Robot robot = new Robot();
-			// press key Ctrl+Shift+r
 			robot.keyPress(KeyEvent.VK_CONTROL);
-			/*robot.delay(100);
-			robot.keyPress(KeyEvent.VK_SHIFT);*/
 			robot.delay(100);
 			robot.keyPress(KeyEvent.VK_R);
 			robot.delay(100);
@@ -122,15 +112,7 @@ public class inform3 {
 			robot.keyRelease(KeyEvent.VK_0);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-			// relase key Ctrl+Shift+r
-			
-			/*robot.delay(100);
-			robot.keyRelease(KeyEvent.VK_SHIFT);*/
-			/*robot.delay(100);
-			robot.keyRelease(KeyEvent.VK_CONTROL);*/
-			
 			PDPage = new PlannedorderDistibutionPage(driver);
-			//PDPage.Enteritem();
 			Thread.sleep(5000);
 			PDPage.ClickonAction();
 			PDPage.EntertowarehouseDetails(towhsNumber);
@@ -139,7 +121,6 @@ public class inform3 {
 			PDPage.EnteritemNumber(itemvalue);
 			PDPage.OrderTypeNumber(Ordertypeval);
 			PDPage.PlannedDistribtionDetails(PlannedDelDate,PlannedQty,Pickupval);
-			//PDPage.ClickonCPDO();
 			Thread.sleep(2000);
 		}
 
