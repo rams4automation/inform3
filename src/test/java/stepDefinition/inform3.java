@@ -40,10 +40,23 @@ public class inform3 {
  	   ConfigReader con=new ConfigReader();
  	   
         
-        String UserName = TD.getCellData("TestData", "UserName",2).trim();
-		String Passwrd = TD.getCellData("TestData", "Password",2).trim();
+  //#############################  Test Data #####################################################
+ 	   
 		String URL="https://mingle-portal.inforcloudsuite.com/GPACLLC_TRN";
 		String path=con.getChromeDriverPath();
+		
+		
+        String UserName = TD.getCellData("TestData", "UserName",2).trim();
+		String Passwrd = TD.getCellData("TestData", "Password",2).trim();
+		String towhsNumber= TD.getCellData("TestData", "ToWHSNumber",2).trim();
+		String frmwhsNumber= TD.getCellData("TestData", "FrmWHSNumber",2).trim();
+		String itemvalue= TD.getCellData("TestData", "ItemNumber",2).trim();
+		String Ordertypeval=TD.getCellData("TestData", "OrderTypeValue",2).trim();
+		String PlannedDelDate=TD.getCellData("TestData", "PlannedDelayDate",2).trim();
+		String PlannedQty=TD.getCellData("TestData", "PlannedQtyval",2).trim();
+		String Pickupval=TD.getCellData("TestData", "DeliveryPickupval",2).trim();
+		
+		
 		
 		
 		@Given("^Launch infor Application$")
@@ -120,10 +133,12 @@ public class inform3 {
 			//PDPage.Enteritem();
 			Thread.sleep(5000);
 			PDPage.ClickonAction();
+			PDPage.EntertowarehouseDetails(towhsNumber);
 			Thread.sleep(2000);
-			PDPage.EnterfrmwarehouseDetails();
-			PDPage.EnteritemNumber();
-			PDPage.OrderTypeNumber();
+			PDPage.EnterfrmwarehouseDetails(frmwhsNumber);
+			PDPage.EnteritemNumber(itemvalue);
+			PDPage.OrderTypeNumber(Ordertypeval);
+			PDPage.PlannedDistribtionDetails(PlannedDelDate,PlannedQty,Pickupval);
 			//PDPage.ClickonCPDO();
 			Thread.sleep(2000);
 		}

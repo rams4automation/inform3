@@ -12,15 +12,12 @@ public class SalesManagementPage {
 	
 		
 			 @FindBy(xpath=".//*[@id='navigatorXi']/fieldset[4]/legend/span")
-			 //@FindBy(xpath="//*[@id='2']/span")
 			 WebElement SalesManagement;
 			
 			@FindBy(xpath=".//*[@id='navigatorXi']/fieldset[4]/div[2]/fieldset[1]/legend/span")
-			// @FindBy(xpath="//*[@id='2_1']/span")
 			 WebElement COPPage; 
 	 
 			 @FindBy(xpath=" .//*[@id='navigatorXi']/fieldset[4]/div[2]/fieldset[1]/div[2]/a[1]")
-			 //@FindBy(xpath="//*[@id='2_1_1']/span")
 			 WebElement COOpen; 
 			
 	 
@@ -32,7 +29,7 @@ public class SalesManagementPage {
 		 }
 	 
 	 
-	 
+	// #########################################  Methods Start ################################# 
 	 
 	    public void clickSalesManagement() throws InterruptedException{
 	    	Thread.sleep(2000);
