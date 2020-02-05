@@ -5,7 +5,7 @@
     <classes>
       <class name="cucumberTest.TestRunner">
         <methods>
-          <include name="feature" invocation-numbers="0"/>
+          <include name="feature" invocation-numbers="1"/>
           <include name="setUpClass"/>
           <include name="tearDownClass"/>
         </methods>

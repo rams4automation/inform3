@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
@@ -86,7 +87,7 @@ public class inform3 {
 		    inforPage.clickoninform3();
 		}
 		
-		@Then("^Enter order details$")
+		@When("^Enter order details$")
 		public void enter_order_details() throws Throwable {
 			Thread.sleep(2000);
 			Robot robot = new Robot();
@@ -115,13 +116,38 @@ public class inform3 {
 			PDPage = new PlannedorderDistibutionPage(driver);
 			Thread.sleep(5000);
 			PDPage.ClickonAction();
-			PDPage.EntertowarehouseDetails(towhsNumber);
 			Thread.sleep(2000);
-			PDPage.EnterfrmwarehouseDetails(frmwhsNumber);
-			PDPage.EnteritemNumber(itemvalue);
-			PDPage.OrderTypeNumber(Ordertypeval);
-			PDPage.PlannedDistribtionDetails(PlannedDelDate,PlannedQty,Pickupval);
-			Thread.sleep(2000);
-		}
+		 }
+			
+			@When("^Enter towarehouse and frmwarehouse Details$")
+			public void entertowarehouseandfrmwarehouseDetails() throws InterruptedException, AWTException {
+				PDPage = new PlannedorderDistibutionPage(driver);
+				PDPage.EntertowarehouseDetails(towhsNumber);
+				Thread.sleep(2000);
+				PDPage.EnterfrmwarehouseDetails(frmwhsNumber);
+			}
+			
+			@When("^Enter itemNumber and OrderType Number Details$")
+			public void enteritemNumberandOrderTypeNumberDetails() throws InterruptedException, AWTException   {
+				PDPage = new PlannedorderDistibutionPage(driver);
+				PDPage.EnteritemNumber(itemvalue);
+				PDPage.OrderTypeNumber(Ordertypeval);
+			}
+			
+			@When("^Enter Planned and Distribtion Details$")
+			public void enterPlannedandDistribtion_Details() throws InterruptedException, AWTException  {
+				PDPage = new PlannedorderDistibutionPage(driver);
+				PDPage.PlannedDistribtionDetails(PlannedDelDate,PlannedQty,Pickupval);
+				Thread.sleep(2000);
+			}
+			
+			@Then("^Verify order is created$")
+			public void verifyorderiscreated() throws InterruptedException, AWTException {
+			   Thread.sleep(2000);
+			   PDPage = new PlannedorderDistibutionPage(driver);
+			   PDPage.ClickonSettings();
+			}
+			
+		
 
 }

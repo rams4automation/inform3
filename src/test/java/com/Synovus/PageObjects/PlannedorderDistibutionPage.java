@@ -3,7 +3,6 @@ package com.Synovus.PageObjects;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +20,7 @@ public class PlannedorderDistibutionPage {
  			@FindBy(xpath=".//*[@id='ActionsBtn']")
 			 WebElement ActionBtn;
  			
- 			@FindBy(xpath=".//div[#'appPageKey1']/iframe[@name='m3h5_ef5e4a05-31ba-4241-bf91-5da1f4774cf4']//span[#'menuBar']//a[@innertext>'Create Planned Distribution']")
+ 			@FindBy(xpath="//*[@id='host_0_ActionsMenumb_1580887125470']/li[8]/a")
 			 WebElement CPDO;
  			
  			@FindBy(xpath="//*[@id='W1TWHLContainer']/button/span")
@@ -29,7 +28,6 @@ public class PlannedorderDistibutionPage {
  			
  			@FindBy(xpath="//*[@id='POS']")
 			 WebElement inputtowherehouse;
- 			
  			
  			@FindBy(xpath="//*[@id='R1']/div[1]")
 			 WebElement Selecttowherehouse;
@@ -68,55 +66,53 @@ public class PlannedorderDistibutionPage {
  			
  		// #########################################  Methods ##############################################
  			
- 			
- 		public void EnterCtrlR() throws InterruptedException, AWTException{
- 			 Thread.sleep(2000);
- 			Robot robot = new Robot();
- 			robot.keyPress(KeyEvent.VK_CONTROL);
- 			robot.delay(100);
- 			robot.keyPress(KeyEvent.VK_R);
- 			robot.delay(100);
- 			robot.keyRelease(KeyEvent.VK_CONTROL);
- 			robot.delay(100);
- 			robot.keyRelease(KeyEvent.VK_R);
- 			robot.delay(100);
- 			robot.keyPress(KeyEvent.VK_D);
- 			robot.keyRelease(KeyEvent.VK_D);
- 			robot.keyPress(KeyEvent.VK_P);
- 			robot.keyRelease(KeyEvent.VK_P);
- 			robot.keyPress(KeyEvent.VK_S);
- 			robot.keyRelease(KeyEvent.VK_S);
- 			robot.keyPress(KeyEvent.VK_1);
- 			robot.keyRelease(KeyEvent.VK_1);
- 			robot.keyPress(KeyEvent.VK_7);
- 			robot.keyRelease(KeyEvent.VK_7);
- 			robot.keyPress(KeyEvent.VK_0);
- 			robot.keyRelease(KeyEvent.VK_0);
- 			robot.keyPress(KeyEvent.VK_ENTER);
- 			robot.keyRelease(KeyEvent.VK_ENTER);
- 		}
- 		
-		public void ClickEnter() throws InterruptedException, AWTException{
-		    Thread.sleep(2000);
-			Robot robot = new Robot();
-		    robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(2000);
-		}
+	 			
+	 		public void EnterCtrlR() throws InterruptedException, AWTException{
+	 			 Thread.sleep(2000);
+	 			Robot robot = new Robot();
+	 			robot.keyPress(KeyEvent.VK_CONTROL);
+	 			robot.delay(100);
+	 			robot.keyPress(KeyEvent.VK_R);
+	 			robot.delay(100);
+	 			robot.keyRelease(KeyEvent.VK_CONTROL);
+	 			robot.delay(100);
+	 			robot.keyRelease(KeyEvent.VK_R);
+	 			robot.delay(100);
+	 			robot.keyPress(KeyEvent.VK_D);
+	 			robot.keyRelease(KeyEvent.VK_D);
+	 			robot.keyPress(KeyEvent.VK_P);
+	 			robot.keyRelease(KeyEvent.VK_P);
+	 			robot.keyPress(KeyEvent.VK_S);
+	 			robot.keyRelease(KeyEvent.VK_S);
+	 			robot.keyPress(KeyEvent.VK_1);
+	 			robot.keyRelease(KeyEvent.VK_1);
+	 			robot.keyPress(KeyEvent.VK_7);
+	 			robot.keyRelease(KeyEvent.VK_7);
+	 			robot.keyPress(KeyEvent.VK_0);
+	 			robot.keyRelease(KeyEvent.VK_0);
+	 			robot.keyPress(KeyEvent.VK_ENTER);
+	 			robot.keyRelease(KeyEvent.VK_ENTER);
+	 		}
+	 		
+			public void ClickEnter() throws InterruptedException, AWTException{
+			    Thread.sleep(2000);
+				Robot robot = new Robot();
+			    robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				Thread.sleep(2000);
+			}
  			
 				 
 			public void ClickonAction() throws InterruptedException, AWTException{
-			    Thread.sleep(2000);
-			    int size = driver.findElements(By.tagName("iframe")).size();
-			    System.out.println("frames size is :- " + size);
-				driver.switchTo().frame("m3h5_ef5e4a05-31ba-4241-bf91-5da1f4774cf4");
-				ActionBtn.click();
 				Thread.sleep(2000);
-				driver.switchTo().defaultContent();
-			}
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_F17);
+				robot.keyRelease(KeyEvent.VK_F17);
+				 Thread.sleep(2000);
+		  	}
 			
 			public void EntertowarehouseDetails(String towhsNumber) throws InterruptedException, AWTException{
-					   Thread.sleep(5000);
+					   Thread.sleep(2000);
 					   driver.switchTo().frame("m3h5_ef5e4a05-31ba-4241-bf91-5da1f4774cf4");
 					   Thread.sleep(2000);
 					   towarehouse.click();
@@ -193,5 +189,15 @@ public class PlannedorderDistibutionPage {
 		      
 			}
 	
+			public void ClickonSettings() throws InterruptedException, AWTException{
+				Thread.sleep(2000);
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_F13);
+				robot.keyRelease(KeyEvent.VK_F13);
+				Thread.sleep(2000);
+				driver.switchTo().frame("m3h5_ef5e4a05-31ba-4241-bf91-5da1f4774cf4");
+				BtnNext.click();
+			    driver.switchTo().defaultContent();
+			}
 	
 }

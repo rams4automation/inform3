@@ -1,7 +1,6 @@
-
 Feature: Synovus Business Sign in
   
-  @Regression
+  @RegressionTest
   Scenario: Verify Business user is able to login to the applicatuion from Personalpage --1	
   											
      Given Launch Synovus Browser
