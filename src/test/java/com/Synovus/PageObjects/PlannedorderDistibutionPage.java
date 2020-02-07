@@ -3,6 +3,9 @@ package com.Synovus.PageObjects;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,8 +14,17 @@ import org.openqa.selenium.support.PageFactory;
 public class PlannedorderDistibutionPage {
               WebDriver driver;
 	
+              ////span[contains(text(),'Plan qty')]//following::div[text()='50.00']
+              
+              //(//div[@id='R1']//following::div[5])[1]
 	
-	
+             /// (//div[contains(@class,'slick-viewport slick-viewport') and contains(@class,'list-view-open')])[1]
+              
+         //Row   //div[contains(@class,'headerrow-columns ')]//following::div[contains(@role,'row')]
+              
+        //all rows    //div[contains(@class,'headerrow-columns ')]//following::div[contains(@role,'row')]//div
+              
+              //Even --//div[contains(@class,'headerrow-columns ')]//following::div[contains(@role,'row')]//following::div[contains(@class,'slick-row  even')]
 
  			 @FindBy(xpath="//*[@id='cmdText']")
  			 WebElement SearchandStart;
@@ -55,14 +67,20 @@ public class PlannedorderDistibutionPage {
 			
  			@FindBy(xpath="//*[@id='WEMODLContainer']/button/span")
 			 WebElement DeliveryMethod;
+ 			
+ 			@FindBy(xpath="//*[@id='DPA170BS_4ca766e6560462acc53da0b9c050a437']")
+			 WebElement Applytable;
 			
  			
-	
+ 			//*[@id="contentBody"]
  			public PlannedorderDistibutionPage(WebDriver driver) {
 			    this.driver=driver;
 				PageFactory.initElements(driver, this);
 			 }
 		
+ 			
+ 			/*<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+			<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>*/
  			
  		// #########################################  Methods ##############################################
  			
@@ -198,6 +216,30 @@ public class PlannedorderDistibutionPage {
 				driver.switchTo().frame("m3h5_ef5e4a05-31ba-4241-bf91-5da1f4774cf4");
 				BtnNext.click();
 			    driver.switchTo().defaultContent();
+			    Thread.sleep(2000);
+				driver.switchTo().frame("m3h5_ef5e4a05-31ba-4241-bf91-5da1f4774cf4");
+				// WebElement mytable=driver.findElement(By.xpath("(//div[@id='R1']//following::div[5])[1]"));
+				 WebElement mytable=driver.findElement(By.xpath("//span[contains(text(),'Plan qty')]//following::div[text()='50.00']"));
+				 //
+				//List<WebElement> myrows=mytable.findElements(By.tagName("tr"));
+				// int rowcount=myrows.size();
+				// System.out.println(rowcount);
+				 mytable.click();
+				/* for(int row=0;row<rowcount;row++){
+					 List<WebElement> mycols=myrows.get(row).findElements(By.tagName("td"));
+					 int colscount=mycols.size();
+					 for(int col=0;col<colscount;col++){
+						String celltext=mycols.get(col).getText();
+						System.out.println(celltext);
+					 }
+				 }*/
+				 
+				 
+				 
+			    driver.switchTo().defaultContent();
+			
+			    
+			
 			}
 	
 }

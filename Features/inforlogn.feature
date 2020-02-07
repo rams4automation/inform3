@@ -1,5 +1,5 @@
 Feature: Infor M3 Application
-  I want to use this template for my feature file
+  
   
 
   @Smoke

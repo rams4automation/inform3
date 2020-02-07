@@ -43,7 +43,8 @@ public class inform3 {
         
   //############################# Start Test Data #####################################################
  	   
-		String URL="https://mingle-portal.inforcloudsuite.com/GPACLLC_TRN";
+		//String URL="https://mingle-portal.inforcloudsuite.com/GPACLLC_TRN";
+		String URL=con.getInforEnvironment();
 		String path=con.getChromeDriverPath();
 		
 		
@@ -137,7 +138,7 @@ public class inform3 {
 			@When("^Enter Planned and Distribtion Details$")
 			public void enterPlannedandDistribtion_Details() throws InterruptedException, AWTException  {
 				PDPage = new PlannedorderDistibutionPage(driver);
-				PDPage.PlannedDistribtionDetails(PlannedDelDate,PlannedQty,Pickupval);
+				PDPage.PlannedDistribtionDetails(PlannedDelDate,"1895",Pickupval);
 				Thread.sleep(2000);
 			}
 			

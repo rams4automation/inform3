@@ -10,9 +10,16 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
-@CucumberOptions(features ="Features", glue={"stepDefinition"},plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html",
-        "html:target/cucumber-reports","json:target/cucumber-reports/CucumberTestReport.json", "rerun:target/cucumber-reports/rerun.txt"}
-          ,tags= {"@Smoke"})
+
+@CucumberOptions(features ="Features", glue={"stepDefinition"},
+                plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html",
+              //  "com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html",
+		        "html:target/cucumber-reports",
+		        "json:target/cucumber-reports/CucumberTestReport.json", 
+		        "junit:target/junit/cucumber.xml",
+		        "json:target/cucumber-jvm-report-html/cucumber-html-reports/cucumber.json",
+		        "rerun:target/cucumber-reports/rerun.txt"}
+		         ,tags={"@Smoke"})
 
 
 public class TestRunner {

@@ -54,5 +54,10 @@ public class ConfigReader {
 		 else throw new RuntimeException("url not specified in the Configuration.properties file.");
 	 }
 	 
+	 public String getInforEnvironment() {
+		 String url = prop.getProperty("INFORM3");
+		 if(url != null) return url;
+		 else throw new RuntimeException("url not specified in the Configuration.properties file.");
+	 }
 	 
 }

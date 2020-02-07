@@ -113,6 +113,7 @@
 		</dependency>
 
      <!-- Apache POI dependencies :: End -->
+     
 	</dependencies>
 	<build>
 		<plugins>
@@ -153,9 +154,9 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>MyProjectName</projectName>  <!-- Replace with project name -->
-							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
-							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+							<projectName>CucumberSelenium</projectName>  <!-- Replace with project name -->
+							<outputDirectory>${project.build.directory}/cucumber-jvm-report-html</outputDirectory>
+							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
 							<buildNumber>1</buildNumber>
 							<parallelTesting>false</parallelTesting>
 						</configuration>
